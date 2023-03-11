@@ -1,6 +1,6 @@
 # odesli_search
 
-The extension for searching highlighted text on Odesli.co.
+The Chrome extension for searching highlighted text on Odesli.co.
 This is a tool that allows users to quickly and conveniently find information about music tracks and albums on the Odesli.com platform.
 
 The main functionality of the program:
