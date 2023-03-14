@@ -1,14 +1,18 @@
-var menuItem = chrome.contextMenus.create({
-		"id": "anhodsrch",
-		"title": "Odesli: '%s'",
-		"contexts":["selection"]
-	});
+// vars
 
-var targetURL = "https://odesli.co/";
+var targetURL = 'https://odesli.co/';
 var tabOdesliId = null;
 var searchValue = null;
+
+// functions
 	
 function searchOnClick(info, tab){
+
+	const { menuItemId } = info;
+
+	if (menuItemId != 'a_odsl_srch') {
+		return;
+	}
 
 	this.searchValue = info.selectionText
 		.replace("\t", " ")
@@ -58,5 +62,14 @@ function doSearch(value){
 	setReactInputValue(searchInput, value);
 }
 
-chrome.contextMenus.onClicked.addListener(searchOnClick);
+// init
 
+chrome.runtime.onInstalled.addListener(() => {
+	var menuItem = chrome.contextMenus.create({
+		"id": "a_odsl_srch",
+		"title": "Search on Odesli: '%s'",
+		"contexts":["selection"]
+	});
+});
+
+chrome.contextMenus.onClicked.addListener(searchOnClick);
