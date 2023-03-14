@@ -2,7 +2,7 @@
    "background": {
       "service_worker": "odeslisearch.js"
    },
-   "description": "Select text on a webpage and search on Odesli.co",
+   "description": "Use the right-click menu to search for selected text on odesli.co",
    "icons": {
       "16":    "icon16.png",
       "32":    "icon32.png",
@@ -11,9 +11,9 @@
    },
    "manifest_version": 3,
    "name": "Odesli search",
-   "permissions": [ "contextMenus", "tabs", "scripting" ],
+   "permissions": [ "contextMenus", "scripting" ],
    "host_permissions": [
      "https://odesli.co/"
    ],
-   "version": "1.0.0"
+   "version": "1.0.1"
 }
